@@ -1,5 +1,7 @@
 .App {
+  /*padding: 5px 15px 5px 5px;*/
   text-align: center;
+  margin: 50px 30%;
 }
 
 .App-logo {
@@ -22,6 +24,11 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+.smaller-input {
+  
+  /*width: 20%;*/
 }
 
 .App-link {

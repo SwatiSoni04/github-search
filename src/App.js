@@ -1,23 +1,26 @@
 import logo from './logo.svg';
 import './App.css';
+import Search from './Search';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import "react-widgets/styles.css";
+import SearchResults from "./SearchResults";
+import { Route, Routes, BrowserRouter as Router, useLocation } from 'react-router-dom';
 
 function App() {
+  /*const location = useLocation();
+  const filteredResults = location.state.filteredResults;
+  const data = location.state.data;
+  console.log("filteredResults", filteredResults, data);*/
+  //const filteredResults = sessionStorage.getItem("filteredResults");
+  //const gitHubResponseData = JSON.parse(sessionStorage.getItem("gitHubResponseData"));
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Search/>} />
+          <Route path="/results" element={<SearchResults/>}/>
+        </Routes>
+      </Router>
     </div>
   );
 }
